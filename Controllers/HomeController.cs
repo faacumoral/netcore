@@ -18,6 +18,9 @@ namespace netcore.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
+            /* demonetcoreContext ctx = new demonetcoreContext();
+            var result = ctx.Usuario.Select(u => new { Nombre = u.Nombre}); */
+
             var result = new List<dynamic>();
             result.Add( new { Nombre= "Facundo" });
             result.Add( new { Nombre= "Pedro" });
@@ -28,7 +31,11 @@ namespace netcore.Controllers
         [HttpPost]
         public IActionResult Insert(string Nombre)
         {
-            // guardar nuevo
+            /*demonetcoreContext ctx = new demonetcoreContext();
+            ctx.Usuario.Add(new Usuario {
+                Nombre = Nombre
+            });
+            ctx.SaveChanges();*/
             return Json(true);
         }
 
