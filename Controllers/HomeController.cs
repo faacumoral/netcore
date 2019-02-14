@@ -15,10 +15,23 @@ namespace netcore.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult GetAll()
         {
-            return View();
+            var result = new List<dynamic>();
+            result.Add( new { Nombre= "Facundo" });
+            result.Add( new { Nombre= "Pedro" });
+            result.Add( new { Nombre= "Javier" });
+            return Json(result);
         }
+
+        [HttpPost]
+        public IActionResult Insert(string Nombre)
+        {
+            // guardar nuevo
+            return Json(true);
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

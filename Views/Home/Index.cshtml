@@ -3,6 +3,36 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">.NET core demo</h1>
+    
+
+    <div id="lblCargando" syle="display: none;">
+        <h4>Cargando...</h4>
+    </div>
+    <div class="row" style="margin-bottom: 40px;">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <ul class="list-group" id="divLista">
+            </ul>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-2">
+            <input id="txtNuevo" class="form-control disabledLoading" />
+        </div>
+        <div class="col-lg-2">
+            <button class="btn btn-success disabledLoading" id="btnNuevo">
+                Guardar
+            </button>
+        </div>
+
+    </div>
+
+   
+
+
 </div>
