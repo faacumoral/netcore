@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using netcore.Models;
+using netcore.DAO;
 
 namespace netcore.Controllers
 {
@@ -18,24 +19,19 @@ namespace netcore.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            /* demonetcoreContext ctx = new demonetcoreContext();
-            var result = ctx.Usuario.Select(u => new { Nombre = u.Nombre}); */
-
-            var result = new List<dynamic>();
-            result.Add( new { Nombre= "Facundo" });
-            result.Add( new { Nombre= "Pedro" });
-            result.Add( new { Nombre= "Javier" });
+            demonetcoreContext ctx = new demonetcoreContext();
+            var result = ctx.Usuario.Select(u => new { Nombre = u.Nombre});
             return Json(result);
         }
 
         [HttpPost]
         public IActionResult Insert(string Nombre)
         {
-            /*demonetcoreContext ctx = new demonetcoreContext();
+            demonetcoreContext ctx = new demonetcoreContext();
             ctx.Usuario.Add(new Usuario {
                 Nombre = Nombre
             });
-            ctx.SaveChanges();*/
+            ctx.SaveChanges();
             return Json(true);
         }
 
